@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Clock | Neon 3D World</title>
+    <style>
+      body {
+        background: radial-gradient(circle, #000, #111);
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #ff69b4;
+      }
+      header {
+        background: #1a001f;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 0 20px #ff69b4;
+      }
+      nav a {
+        color: #ff69b4;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.2em;
+        transition: transform 0.3s ease;
+      }
+      nav a:hover {
+        transform: scale(1.1);
+      }
+      .clock-container {
+        perspective: 800px;
+        margin-top: 50px;
+        text-align: center;
+      }
+      .clock {
+        display: inline-block;
+        padding: 20px;
+        font-size: 3em;
+        transform: rotateX(20deg) rotateY(20deg);
+        text-shadow: 0px 0px 15px #ff00ff;
+        background: rgba(26, 0, 31, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 20px #ff69b4;
+      }
+      #dateDisplay {
+        font-size: 2em;
+        text-shadow: 0px 0px 10px #ff00ff;
+        transform: rotateX(15deg) rotateY(15deg);
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Neon 3D Clock</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="clock.html">Clock</a>
+        <a href="media.html">Media</a>
+      </nav>
+    </header>
+    <div class="clock-container">
+      <div class="clock" id="clockDisplay">00:00:00</div>
+      <div id="dateDisplay">00/00/0000</div>
+    </div>
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById("clockDisplay").innerText =
+          hours + ":" + minutes + ":" + seconds;
+
+        // Update date in dd/mm/yyyy format
+        const day = String(now.getDate()).padStart(2, "0");
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const year = now.getFullYear();
+        document.getElementById("dateDisplay").innerText =
+          day + "/" + month + "/" + year;
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>

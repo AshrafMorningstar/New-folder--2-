@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media & Interactive Search</title>
+    <style>
+      body {
+        background: radial-gradient(circle, #000, #111);
+        font-family: 'Arial', sans-serif;
+        color: #ff69b4;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #1a001f;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 0 20px #ff69b4;
+      }
+      nav a {
+        color: #ff69b4;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.2em;
+        transition: transform 0.3s ease;
+      }
+      nav a:hover {
+        transform: scale(1.1);
+      }
+      .media-content {
+        padding: 40px;
+        text-align: center;
+      }
+      iframe {
+        width: 80%;
+        max-width: 700px;
+        height: 400px;
+        border: none;
+        box-shadow: 0 0 20px #ff69b4;
+        margin-bottom: 30px;
+      }
+      .search-form input[type="text"] {
+        padding: 10px;
+        font-size: 1em;
+        width: 60%;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      .search-form input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: #ff69b4;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 10px #ff00ff;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .search-form input[type="submit"]:hover {
+        background-color: #ff00ff;
+      }
+      .social-links {
+        margin-top: 30px;
+        list-style: none;
+        padding: 0;
+      }
+      .social-links li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+      .social-links a {
+        color: #ff69b4;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Media & Interactive Search</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="clock.html">Clock</a>
+        <a href="media.html">Media</a>
+      </nav>
+    </header>
+    <div class="media-content">
+      <h2>Featured Video</h2>
+      <!-- Replace the src URL with any YouTube video you like -->
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        allowfullscreen
+      ></iframe>
+
+      <h2>Google Search</h2>
+      <form
+        class="search-form"
+        action="https://www.google.com/search"
+        method="GET"
+        target="_blank"
+      >
+        <input type="text" name="q" placeholder="Search Google..." required />
+        <input type="submit" value="Search" />
+      </form>
+
+      <h2>Follow Me on Social Media</h2>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/ashraf" target="_blank">Twitter</a></li>
+        <li>
+          <a href="https://www.instagram.com/ashraf" target="_blank"
+            >Instagram</a
+          >
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/ashraf" target="_blank">LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
